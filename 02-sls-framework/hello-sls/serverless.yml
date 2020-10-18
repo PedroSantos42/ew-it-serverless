@@ -1,0 +1,16 @@
+org: pedroabsdev42
+app: hello-sls-app
+service: hello-sls
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: hello
+          method: get
+          
