@@ -41,7 +41,7 @@ aws lambda invoke \
 
 # 6º remover recursos
 aws lambda delete-function \
-    --function-name hello-cl
+    --function-name hello-cli
 
 aws iam delete-role \
     --role-name lambda-example
