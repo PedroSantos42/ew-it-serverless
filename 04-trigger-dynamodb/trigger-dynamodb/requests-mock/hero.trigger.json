@@ -1,0 +1,40 @@
+{
+  "Records": [
+    {
+      "eventID": "aad60a0fe1184811859225482e98d8da",
+      "eventName": "INSERT",
+      "eventVersion": "1.1",
+      "eventSource": "aws:dynamodb",
+      "awsRegion": "us-east-1",
+      "dynamodb": {
+        "ApproximateCreationDateTime": 1603247612,
+        "Keys": {
+          "name": {
+            "S": "Aquaman"
+          },
+          "id": {
+            "S": "cf884ea0-1345-11eb-9a90-1dfc42427516"
+          }
+        },
+        "NewImage": {
+          "createdAt": {
+            "S": "2020-10-21T02:33:32.043Z"
+          },
+          "name": {
+            "S": "Aquaman"
+          },
+          "id": {
+            "S": "cf884ea0-1345-11eb-9a90-1dfc42427516"
+          },
+          "power": {
+            "S": "Water"
+          }
+        },
+        "SequenceNumber": "300000000001489165438",
+        "SizeBytes": 141,
+        "StreamViewType": "NEW_AND_OLD_IMAGES"
+      },
+      "eventSourceARN": "arn:aws:dynamodb:us-east-1:253519823014:table/Heroes/stream/2020-10-21T02:23:06.583"
+    }
+  ]
+}
