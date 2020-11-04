@@ -9,6 +9,19 @@ provider:
   environment:
     ${file(./config/env.${self:provider.stage}.json)}
 
+custom:
+  schedulerRate: rate(1 minute)
+  enabled: true
+  tableName: ${self:provider.environment.DBTableName}
+  dbWriteCapacityUnits: ${self:provider.environment.DBWriteCapacityUnits}
+  dbReadCapacityUnits: ${self:provider.environment.DBReadCapacityUnits}
+
 functions:
   commit-message-scheduler:
     handler: handler.scheduler
+    events:
+      - schedule:
+          rate: ${self:custom.schedulerRate}
+          name: schedule-commit-message-${self:provider.stage}
+          description: get commit messages each minute
+          enabled: ${self:custom.enabled}
