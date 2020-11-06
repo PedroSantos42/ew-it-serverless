@@ -9,5 +9,12 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.786.0",
+    "axios": "^0.21.0",
+    "cheerio": "^1.0.0-rc.3",
+    "env-var": "^6.3.0",
+    "uuid": "^8.3.1"
+  }
 }

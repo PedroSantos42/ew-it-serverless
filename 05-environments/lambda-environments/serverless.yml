@@ -8,6 +8,8 @@ provider:
   stage: ${opt:stage, "qa"}
   environment:
     ${file(./config/env.${self:provider.stage}.json)}
+  iamRoleStatements:
+    ${file(./config/serverless/db.iam.role.yml)}
 
 custom:
   schedulerRate: rate(1 minute)
@@ -15,6 +17,10 @@ custom:
   tableName: ${self:provider.environment.DBTableName}
   dbWriteCapacityUnits: ${self:provider.environment.DBWriteCapacityUnits}
   dbReadCapacityUnits: ${self:provider.environment.DBReadCapacityUnits}
+
+resources:
+  Resources:
+    ${file(./config/serverless/resources/dynamo.hero.table.yml)}
 
 functions:
   commit-message-scheduler:
