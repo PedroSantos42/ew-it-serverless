@@ -1,7 +1,5 @@
 service: layers-nodejs-modules
 
-frameworkVersion: '2'
-
 provider:
   name: aws
   runtime: nodejs12.x
@@ -11,11 +9,11 @@ functions:
     handler: handler.hello
     events:
       - http:
-          path: 'hello'
-          method: 'get'
+          path: "hello"
+          method: "get"
     layers:
-      - {Ref: NodeModulesLambdaLayer}
-      
+      - { Ref: NodeModulesLambdaLayer }
+
 layers:
   NodeModules:
     path: layer
