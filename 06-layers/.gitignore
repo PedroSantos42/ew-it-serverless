@@ -1,4 +1,6 @@
 /yumda-example/dependencies.zip
+/demo*
+/mememaker/dependencies*
 
 # Serverless directories
 .serverless
